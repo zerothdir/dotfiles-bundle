@@ -31,7 +31,7 @@ of exiting tmux.
 
 | Keys | What it does |
 |---|---|
-| `prefix` `c` | New window |
+| `prefix` `c` | New window, in the current directory |
 | `prefix` `0`…`9` | Go to window number |
 | `prefix` `n` / `p` | Next / previous window |
 | `prefix` `w` | Pick a window from a tree |
@@ -46,8 +46,9 @@ Window names are the running command with an icon (for example the robot for
 
 | Keys | What it does |
 |---|---|
-| `prefix` `%` | Split side by side |
-| `prefix` `"` | Split top and bottom |
+| `prefix` `\|` | Split side by side, in the current directory |
+| `prefix` `-` | Split top and bottom, in the current directory |
+| `prefix` `%` / `"` | Same splits, in the directory the session started in |
 | `prefix` arrow keys | Move to the pane in that direction |
 | `prefix` `o` | Move to the next pane |
 | `prefix` `;` | Move to the last used pane |
@@ -60,7 +61,6 @@ Window names are the running command with an icon (for example the robot for
 | `prefix` `q` | Show pane numbers (press a number to jump) |
 | `prefix` `x` | Close the pane (asks first) |
 
-New windows and splits open in the directory the session started in.
 
 ## Floating scratch terminal
 
