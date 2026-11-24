@@ -87,8 +87,9 @@ state between openings.
 | `q` | Leave copy mode without copying |
 | `prefix` `]` | Paste the last copied text |
 
-Copy mode uses vi keys. Copied text also reaches your system clipboard when
-the terminal supports it (Ghostty and Windows Terminal do).
+Copy mode uses vi keys. `y` copies into tmux's own buffer, for pasting with
+`prefix` `]`. To copy to your computer's clipboard instead, select with the
+mouse while holding `Shift` (Windows Terminal) or `Option` (Ghostty).
 
 ## Other
 
