@@ -89,7 +89,9 @@ state between openings.
 
 Copy mode uses vi keys. `y` copies into tmux's own buffer, for pasting with
 `prefix` `]`. To copy to your computer's clipboard instead, select with the
-mouse while holding `Shift` (Windows Terminal) or `Option` (Ghostty).
+mouse as usual (tmux's mouse mode is off, so the terminal handles it). With
+split panes that selects across all of them, so zoom the pane first with
+`prefix` `z`.
 
 ## Other
 
