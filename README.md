@@ -5,6 +5,12 @@ from a private repo and is useless without the passphrase.
 
 Download: <https://github.com/zerothdir/dotfiles-bundle/releases/download/rhel/rhel-bundle.tar.gz.gpg>
 
+How to use the tools once installed: [tool guides](docs/README.md)
+([tmux](docs/tmux.md), [sesh](docs/sesh.md), [zsh](docs/zsh.md),
+[Neovim](docs/neovim.md), [zoxide](docs/zoxide.md),
+[ripgrep and fd](docs/search.md), [colorls](docs/colorls.md),
+[gum](docs/gum.md), [chezmoi](docs/chezmoi.md)).
+
 ## Install
 
 ### 1. Download and copy (on Windows)
