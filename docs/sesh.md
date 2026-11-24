@@ -8,6 +8,7 @@ Works from inside or outside tmux.
 
 | Where | Keys | Lists |
 |---|---|---|
+| tmux | `prefix` `K` | Everything: tmux sessions, configured sessions and zoxide directories, with icons |
 | zsh | `Alt+s` | Running tmux sessions and configured sessions |
 
 Type to fuzzy filter (the filter is [gum](gum.md)), use the arrows to move,

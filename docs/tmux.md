@@ -21,7 +21,8 @@ let go, then press `x`.
 | `prefix` `$` | Rename the session |
 | `tmux kill-server` | Stop tmux and every session |
 
-For jumping between projects, [sesh](sesh.md) is quicker than these.
+For jumping between projects, [sesh](sesh.md) is quicker than these:
+`prefix` `K` opens its picker.
 
 Closing the last window of a session switches you to another session instead
 of exiting tmux.
@@ -30,12 +31,12 @@ of exiting tmux.
 
 | Keys | What it does |
 |---|---|
-| `prefix` `c` | New window, in the current directory |
+| `prefix` `c` | New window |
 | `prefix` `0`…`9` | Go to window number |
 | `prefix` `n` / `p` | Next / previous window |
 | `prefix` `w` | Pick a window from a tree |
 | `prefix` `,` | Rename the window |
-| `prefix` `<` / `>` | Move the window left / right (repeatable) |
+| `prefix` `.` | Move the window to another number |
 | `prefix` `&` | Close the window (asks first) |
 
 Window names are the running command with an icon (for example the robot for
@@ -45,11 +46,13 @@ Window names are the running command with an icon (for example the robot for
 
 | Keys | What it does |
 |---|---|
-| `prefix` `\|` | Split side by side |
-| `prefix` `-` | Split top and bottom |
-| `prefix` `\` / `_` | Full-width / full-height split |
-| `prefix` `h` `j` `k` `l` | Move to the pane left / down / up / right |
-| `prefix` `H` `J` `K` `L` | Resize by 5 cells (repeatable: keep pressing the letter) |
+| `prefix` `%` | Split side by side |
+| `prefix` `"` | Split top and bottom |
+| `prefix` arrow keys | Move to the pane in that direction |
+| `prefix` `o` | Move to the next pane |
+| `prefix` `;` | Move to the last used pane |
+| `prefix` `Alt`+arrow keys | Resize by 5 cells (repeatable: keep pressing the arrow) |
+| `prefix` `Ctrl`+arrow keys | Resize by 1 cell (repeatable) |
 | `prefix` `z` | Zoom the pane to full window and back |
 | `prefix` `Space` | Cycle through layouts |
 | `prefix` `{` / `}` | Swap with the previous / next pane |
@@ -57,7 +60,7 @@ Window names are the running command with an icon (for example the robot for
 | `prefix` `q` | Show pane numbers (press a number to jump) |
 | `prefix` `x` | Close the pane (asks first) |
 
-New splits open in the current pane's directory.
+New windows and splits open in the directory the session started in.
 
 ## Floating scratch terminal
 
@@ -75,14 +78,17 @@ state between openings.
 
 | Keys | What it does |
 |---|---|
-| `prefix` `[` | Enter copy mode (scroll with arrows or `PgUp`/`PgDn`) |
+| `prefix` `[` | Enter copy mode |
 | `prefix` `PgUp` | Enter copy mode and scroll up a page |
-| `Ctrl+s` / `Ctrl+r` | In copy mode: search down / up |
-| `q` | Leave copy mode |
+| `h` `j` `k` `l`, `Ctrl+u` / `Ctrl+d` | Move, scroll half a page up / down |
+| `/` / `?` | Search down / up (`n` / `N` for next / previous match) |
+| `v` | Start selecting (`V` for whole lines) |
+| `y` | Copy the selection and leave copy mode |
+| `q` | Leave copy mode without copying |
 | `prefix` `]` | Paste the last copied text |
 
-Copy mode uses emacs keys, where `Ctrl+Space` starts a selection, but that's
-also the prefix, so selecting inside copy mode doesn't work right now.
+Copy mode uses vi keys. Copied text also reaches your system clipboard when
+the terminal supports it (Ghostty and Windows Terminal do).
 
 ## Other
 
