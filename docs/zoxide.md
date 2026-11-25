@@ -2,7 +2,7 @@
 
 A smarter `cd`. It remembers the directories you visit and jumps to the best
 match for a few letters of the name. Here it sits behind `cd` itself, so you
-don't need a separate command (`j` and `ji` still work as aliases).
+don't need a separate command (`j` still works as an alias).
 
 | Command | What it does |
 |---|---|
@@ -11,8 +11,6 @@ don't need a separate command (`j` and `ji` still work as aliases).
 | `cd ~/some/path` | Works like a normal `cd` for real paths, and remembers them |
 | `cd -` | Go back to the previous directory |
 | `cd` | Go home |
-| `cdi foo` | Pick interactively among the matches |
-| `cd foo` then `Space` `Tab` | Complete from the matches |
 | `zoxide query foo` | Print the match without jumping |
 | `zoxide query -l` | List every remembered directory, best first |
 | `zoxide remove ~/old/path` | Forget a directory |

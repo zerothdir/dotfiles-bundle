@@ -27,7 +27,7 @@ Type to fuzzy filter (the filter is [gum](gum.md)), use the arrows to move,
 | `sesh last` | Switch to the previous session |
 
 `sesh list` includes zoxide's directories, so any directory you've visited with
-`j` can become a session.
+`cd` can become a session.
 
 ## Config (optional)
 
