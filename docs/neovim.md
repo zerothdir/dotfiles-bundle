@@ -47,6 +47,11 @@ Language servers: `clangd` (C, C++, CUDA), `lua_ls` (Lua), `gopls` (Go, only
 if `go` is installed), `pyright` (Python, only if Node.js is installed).
 `:LspInfo` shows what's attached to the current file.
 
+Syntax highlighting (treesitter) covers Bash, C, C++, CUDA, CMake, Make, Go,
+Python, Lua, JavaScript, HTML, XML, JSON, YAML, TOML, INI, SQL, Dockerfile,
+Markdown, Vim script and git files. Other file types open with plain
+highlighting.
+
 For C++ and CUDA projects, clangd needs a `compile_commands.json` in the project
 root (CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`).
 
