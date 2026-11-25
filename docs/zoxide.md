@@ -1,25 +1,29 @@
 # zoxide
 
 A smarter `cd`. It remembers the directories you visit and jumps to the best
-match for a few letters of the name. Here the command is `j` (for jump).
+match for a few letters of the name. Here it sits behind `cd` itself, so you
+don't need a separate command (`j` and `ji` still work as aliases).
 
 | Command | What it does |
 |---|---|
-| `j foo` | Jump to the most used directory matching `foo` |
-| `j foo bar` | Match `foo`, then `bar`, in order (for example `j proj api`) |
-| `j ~/some/path` | Works like `cd` for real paths, and remembers them |
-| `j -` | Go back to the previous directory |
-| `j` | Go home |
-| `ji foo` | Pick interactively among the matches |
-| `j foo` then `Tab` | Complete from the matches |
+| `cd foo` | Go to `./foo` if it exists; otherwise jump to the most used directory matching `foo` |
+| `cd foo bar` | Match `foo`, then `bar`, in order (for example `cd proj api`) |
+| `cd ~/some/path` | Works like a normal `cd` for real paths, and remembers them |
+| `cd -` | Go back to the previous directory |
+| `cd` | Go home |
+| `cdi foo` | Pick interactively among the matches |
+| `cd foo` then `Space` `Tab` | Complete from the matches |
 | `zoxide query foo` | Print the match without jumping |
 | `zoxide query -l` | List every remembered directory, best first |
 | `zoxide remove ~/old/path` | Forget a directory |
 
-zoxide only knows directories you've been to, so `cd` (or `j` with a full
-path) into a new one once first.
+zoxide only knows directories you've been to, so `cd` into a new one by its
+real path once first.
 
-Matching is on the last part of the path first: `j dot` finds
+Matching is on the last part of the path first: `cd dot` finds
 `~/Repositories/dotfiles` before `~/dotnet/stuff`.
+
+This only changes `cd` in interactive shells. Scripts still get the normal
+`cd`. If you need the plain builtin by hand, run `builtin cd foo`.
 
 The remembered directories are also offered by [sesh](sesh.md).
