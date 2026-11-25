@@ -19,6 +19,23 @@ The shell, with zinit (plugin manager) and the powerlevel10k prompt.
 Commands are syntax-highlighted as you type: red means zsh can't find the
 command.
 
+## History
+
+History is saved to `~/.zsh_history` (50,000 commands) as you go, and shared
+between open shells: a command run in one tmux pane shows up in the others'
+`Ctrl+R` and `↑` too. Installing a new bundle keeps it.
+
+| Command or keys | What it does |
+|---|---|
+| `↑` / `↓` | Previous / next command |
+| `Ctrl+R` | Search history (see Keys above) |
+| `history` | List recent commands |
+| `history -i 1 \| grep foo` | Find every past command containing `foo`, with dates |
+| `!!` | Rerun the last command (`sudo !!` reruns it with sudo) |
+| ` command` (leading space) | Run without saving to history |
+
+Repeated commands are kept once, at their latest use.
+
 ## Prompt (powerlevel10k)
 
 | Command | What it does |
@@ -43,5 +60,6 @@ exit code and duration. Icons need a Nerd Font in your terminal.
 | `~/.zshrc` | The config. Managed by [chezmoi](chezmoi.md): edits get replaced on the next apply |
 | `~/.zshrc.local` | Your own settings for this machine (env vars, aliases). Loaded last, never touched by updates |
 | `~/.p10k.zsh` | Prompt style |
+| `~/.zsh_history` | Command history. Not managed by chezmoi, so updates keep it |
 
 After changing a file, run `exec zsh` to reload.
