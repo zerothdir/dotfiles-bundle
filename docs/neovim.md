@@ -43,8 +43,8 @@ close.
 | `Space` `q` | Put all diagnostics in a list |
 | `]` `d` / `[` `d` | Next / previous diagnostic |
 
-Language servers: `clangd` (C, C++, CUDA), `lua_ls` (Lua), `gopls` (Go, only
-if `go` is installed), `pyright` (Python, only if Node.js is installed).
+Language servers: `clangd` (C, C++, CUDA), `lua_ls` (Lua), `gopls` (Go; the
+bundle includes Go 1.26.1), `pyright` (Python, only if Node.js is installed).
 `:LspInfo` shows what's attached to the current file.
 
 Syntax highlighting (treesitter) covers Bash, C, C++, CUDA, CMake, Make, Go,
@@ -90,9 +90,8 @@ also add the missing `#include` or import when you accept.
 ### Files without a language server
 
 YAML, JSON, Markdown and plain text have no language server here, so the menu
-only shows paths. Python has none without Node.js, and Go none without the Go
-toolchain. For words already in your open files, use Vim's built-in
-completion:
+only shows paths. Python has none without Node.js. For words already in your
+open files, use Vim's built-in completion:
 
 | Keys | What it does |
 |---|---|
