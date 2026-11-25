@@ -57,13 +57,48 @@ root (CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`).
 
 ## Completion
 
+Completion (nvim-cmp) starts in insert mode. As you type, a menu pops up with
+suggestions, and the first one is already highlighted. Nothing is inserted
+until you accept.
+
 | Keys | What it does |
 |---|---|
-| `Ctrl+n` / `Ctrl+p` | Next / previous suggestion |
-| `Ctrl+y` | Accept the suggestion |
-| `Ctrl+Space` | Open suggestions manually |
-| `Ctrl+b` / `Ctrl+f` | Scroll the docs popup |
-| `Ctrl+l` / `Ctrl+h` | Jump forward / back in a snippet |
+| `Ctrl+y` | Accept the highlighted suggestion ("yes") |
+| `Ctrl+n` / `Ctrl+p`, or `↓` / `↑` | Highlight the next / previous suggestion |
+| `Ctrl+e` | Close the menu without accepting |
+| `Ctrl+Space` | Open the menu when it isn't showing |
+| `Ctrl+b` / `Ctrl+f` | Scroll the documentation popup beside the menu |
+| `Ctrl+l` / `Ctrl+h` | After accepting a snippet: jump to its next / previous blank to fill in |
+
+`Enter` and `Tab` don't accept: `Enter` starts a new line and `Tab` inserts a
+tab, as if the menu weren't there. Keep typing to narrow the list down.
+
+### Where suggestions come from
+
+| Source | What it suggests | When |
+|---|---|---|
+| Language server | Variables, functions, fields, keywords, imports | Files whose language server is running (see Code above) |
+| Snippets | Code templates with blanks, such as a function call with its arguments | When the language server offers them |
+| Paths | File and directory names | After typing `/` or `./` |
+| Neovim's Lua API | `vim.*` functions | Editing the Neovim config |
+
+The menu labels each item with its kind (Function, Variable, Snippet and so
+on). Accepting a function often fills in its arguments as a snippet: type the
+first one, press `Ctrl+l` to jump to the next, and so on. Some language servers
+also add the missing `#include` or import when you accept.
+
+### Files without a language server
+
+YAML, JSON, Markdown and plain text have no language server here, so the menu
+only shows paths. Python has none without Node.js, and Go none without the Go
+toolchain. For words already in your open files, use Vim's built-in
+completion:
+
+| Keys | What it does |
+|---|---|
+| `Ctrl+n` / `Ctrl+p` (with no menu showing) | Complete the word from open files |
+| `Ctrl+x` then `Ctrl+l` | Complete the whole line |
+| `Ctrl+x` then `Ctrl+f` | Complete a file name |
 
 ## Editing extras
 
